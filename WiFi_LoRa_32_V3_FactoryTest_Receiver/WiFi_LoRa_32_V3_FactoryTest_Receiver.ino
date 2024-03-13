@@ -29,6 +29,10 @@
 #include <Wire.h>  
 #include "HT_SSD1306Wire.h"
 
+/********************************* WiFi  *********************************************/
+#define SSID YOUR_SSID
+#define PASSWORD YOUR_PASSWORD
+
 /********************************* lora  *********************************************/
 #define RF_FREQUENCY                                915000000 // Hz
 
