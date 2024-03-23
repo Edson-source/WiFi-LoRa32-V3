@@ -43,7 +43,7 @@
                                                               //  2: 500 kHz,
                                                               //  3: Reserved]
 #define LORA_SPREADING_FACTOR                       7         // [SF7..SF12]
-#define LORA_CODINGRATE                             1         // [1: 4/5,
+#define LORA_CODINGRATE                             4         // [1: 4/5,
                                                               //  2: 4/6,
                                                               //  3: 4/7,
                                                               //  4: 4/8]
@@ -365,7 +365,8 @@ void loop()
 
   if(receiveflag && (state==LOWPOWER) )
   {
-    receiveflag = false;txNumber
+    receiveflag = false;
+    txNumber++;
     packet ="R_data:";
     int i = 0;
     while(i < rxSize)
@@ -379,9 +380,8 @@ void loop()
     packSize += String(Rssi,DEC);
     send_num = "send num: ";
     send_num += String(txNumber,DEC);
-    factory_display.drawString(0, 0, show_lora);
-    factory_display.drawString(0, 10, packet);
-    factory_display.drawString(0, 20, packSize);
+    factory_display.drawString(0, 0, packet);
+    factory_display.drawString(0, 10, packSize);
     factory_display.drawString(0, 50, send_num);
     factory_display.display();
     delay(10);
@@ -391,7 +391,7 @@ void loop()
     {
       digitalWrite(LED, HIGH);  
     }
-    else((rxNumber%2)!=0)
+    else if((rxNumber%2)!=0)
     {
       digitalWrite(LED, LOW);
     }
