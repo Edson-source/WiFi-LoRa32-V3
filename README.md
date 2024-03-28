@@ -9,3 +9,7 @@ The reference for Arduino IDE: https://github.com/Heltec-Aaron-Lee/WiFi_Kit_seri
 Select the "WiFi LoRa 32 (V3) / Wireless shell (V3) / Wireles stick lite (V3)" board
 
 Remembering that WiFi need to be configured
+
+
+Pinout
+![WiFi LoRa V3 Pinout](https://github.com/Edson-source/WiFi-LoRa32-V3/assets/79418523/d8868c5b-7342-430a-8f52-ec4cf042d7a6)
